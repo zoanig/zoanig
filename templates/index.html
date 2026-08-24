@@ -3,21 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoanig</title>
+
+    <title>{{ DATA.profile.headline }}</title>
+
     <style>
-        div {
-            width: 40%;
-            margin: auto;
+        :root {
+            --background: #0d1117;
+            --terminal: #10161d;
+            --header: #161d25;
+            --border: #26303a;
+
+            --cyan: #67e8f9;
+            --magenta: #f0abfc;
+            --green: #86efac;
+            --white: #f1f5f9;
+            --muted: #64748b;
+
+            --shadow:
+                0 0 30px rgba(103, 232, 249, 0.04),
+                0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
             display: flex;
+            align-items: center;
             justify-content: center;
-            color: white;
-            background-color: black;
+
+            padding: 40px 20px;
+
+            background: var(--background);
+            color: var(--white);
+
+            font-family:
+                "JetBrains Mono",
+                "Fira Code",
+                "Cascadia Code",
+                Consolas,
+                monospace;
+        }
+
+        .terminal {
+            width: min(1100px, 100%);
+
+            overflow: hidden;
+
+            background: var(--terminal);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            box-shadow: var(--shadow);
+        }
+
+        /* Terminal header */
+
+        .terminal-header {
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 16px;
+
+            background: var(--header);
+            border-bottom: 1px solid var(--border);
+
+            position: relative;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control {
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+            background: #334155;
+        }
+
+        .terminal-title {
+            position: absolute;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* Terminal body */
+
+        .terminal-body {
+            padding: 32px;
+
+            overflow-x: auto;
+        }
+
+        .command {
+            margin-bottom: 30px;
+
+            white-space: nowrap;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .prompt {
+            color: var(--cyan);
+        }
+
+        /* Fastfetch */
+
+        .profile {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+
+            gap: 0 36px;
+
+            align-items: start;
+        }
+
+        .ascii {
+            margin: 0;
+
+            color: var(--cyan);
+
+            white-space: pre;
+
+            font-family: inherit;
+            font-size: clamp(8px, 0.9vw, 13px);
+            line-height: 1.25;
+        }
+
+        .info {
+            padding-top: 2px;
+
+            min-width: 0;
+
+            font-size: clamp(11px, 1vw, 14px);
+            line-height: 1.8;
+        }
+
+        .headline {
+            margin-bottom: 2px;
+
+            color: var(--cyan);
+            font-weight: 700;
+        }
+
+        .separator {
+            margin-bottom: 16px;
+
+            color: var(--muted);
+        }
+
+        .section {
+            margin-top: 17px;
+            margin-bottom: 3px;
+
+            color: var(--magenta);
+            font-weight: 700;
+        }
+
+        .section:first-child {
+            margin-top: 0;
+        }
+
+        .field {
+            display: flex;
+
+            min-width: 0;
+
+            white-space: nowrap;
+        }
+
+        .label {
+            flex: 0 0 145px;
+
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .value {
+            min-width: 0;
+
+            color: var(--white);
+
+            overflow-wrap: anywhere;
+        }
+
+        .value a {
+            color: var(--white);
+            text-decoration: none;
+
+            transition: color 0.15s ease;
+        }
+
+        .value a:hover {
+            color: var(--cyan);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Artist credit */
+
+        .artist {
+            margin-top: 24px;
+
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .artist span {
+            color: var(--magenta);
+        }
+
+        /* Footer */
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 18px;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--white);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 800px) {
+            body {
+                padding: 15px;
+
+                align-items: flex-start;
+            }
+
+            .terminal-body {
+                padding: 22px;
+            }
+
+            .terminal-title {
+                display: none;
+            }
+
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            .ascii {
+                margin-bottom: 28px;
+
+                font-size: 9px;
+            }
+
+            .info {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .terminal {
+                border-radius: 7px;
+            }
+
+            .terminal-body {
+                padding: 17px;
+            }
+
+            .command {
+                font-size: 11px;
+            }
+
+            .ascii {
+                font-size: 7px;
+            }
+
+            .info {
+                font-size: 11px;
+            }
+
+            .label {
+                flex-basis: 110px;
+            }
+
+            .artist {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div>
-        <pre><code>{{ content }}</code></pre>
-    </div>
+
+<div class="terminal">
+
+    <header class="terminal-header">
+
+        <div class="controls">
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+        </div>
+
+        <div class="terminal-title">
+            zoanig@github.com: ~
+        </div>
+
+    </header>
+
+
+    <main class="terminal-body">
+
+        <!-- Command -->
+
+        <div class="command">
+            <span class="prompt">
+                $ 
+            </span>
+            curl -L zoanig.vercel.app
+        </div>
+
+
+        <!-- Fastfetch output -->
+
+        <div class="profile">
+
+            <div>
+                <pre class="ascii">{{ ASCII }}</pre>
+
+                <div class="artist">
+                    ASCII art by
+                    <span>{{ DATA.ascii.artist }}</span>
+                </div>
+            </div>
+
+
+            <div class="info">
+
+                <div class="headline">
+                    {{ DATA.profile.headline }}
+                </div>
+
+                <div class="separator">
+                    -----------------
+                </div>
+
+
+                {% for section in DATA.profile.sections %}
+
+                    <div class="section">
+                        [ {{ section.title }} ]
+                    </div>
+
+
+                    {% for name, value in section.fields.items %}
+
+                        <div class="field">
+
+                            <span class="label">
+                                {{ name }}:
+                            </span>
+
+                            <span class="value">
+
+                                {% if name == "Github" %}
+                                    <a
+                                        href="https://{{ value }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {{ value }}
+                                    </a>
+
+                                {% elif name == "LinkedIn" %}
+                                    <a
+                                        href="https://{{ value }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {{ value }}
+                                    </a>
+
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+
+                            </span>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Prompt -->
+
+        <div class="footer">
+
+            <span class="prompt">$</span>
+            <span>_</span>
+
+        </div>
+
+    </main>
+
+</div>
+
 </body>
 </html>

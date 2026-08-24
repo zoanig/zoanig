@@ -1,0 +1,30 @@
+{
+    "ascii": {
+        "file": "./ascii.txt",
+        "artist": "Blazej Kozlowski"
+    },
+    "profile": {
+        "headline": "zoanig@github.com",
+        "sections": [
+            {
+                "title": "Personal Info",
+                "fields": {
+                    "Name": "Muhammad Hassan",
+                    "Country": "Pakistan",
+                    "Github": "github.com/zoanig",
+                    "LinkedIn": "linkedin.com/in/zoanig"
+                }
+            },
+            {
+                "title": "Tech Stack",
+                "fields": {
+                    "Languages": "Python, JS/TS, Rust, C++",
+                    "Expertise": "Backend Web Development",
+                    "Databases": "MySQL, PostgreSQL, MongoDB",
+                    "Frameworks": "Django, FastAPI, ExpressJs, NestJs",
+                    "Tools & Others": "Linux, Docker, Bash Scripting"
+                }
+            }
+        ]
+    }
+}
