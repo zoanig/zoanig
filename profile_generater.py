@@ -23,6 +23,7 @@ def generate_fetch_layout(config, logo_str, gap=4, color=True):
     c_reset = "\033[0m" if color else ""
     profile = config["profile"]
     logo_lines = [f'{c_key}{line}{c_reset}' for line in logo_str.split("\n") if line.strip() or logo_str.startswith(line)]
+    logo_lines.append(f'      ASCII by {c_title}{DATA['ascii']['artist']}{c_reset}')
     max_logo_width = max(len(line) for line in logo_lines) if logo_lines else 0
     all_keys = []
     for section in profile["sections"]:
