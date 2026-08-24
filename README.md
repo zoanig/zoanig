@@ -1,5 +1,4 @@
 <pre>
-<b>zoanig@github.com:~$</b> fastfetch
 <code>
        _                            zoanig@github.com
        \`*-.                        -----------------
@@ -17,5 +16,16 @@
       .*' /  .*' ; .*`- +'  `*'       Tools & Others : Linux, Docker, Bash Scripting
       `*-*   `*-*  `*-*'            
                                     
+
 </code>
 </pre>
+Try In Your Terminal:
+Linux / Mac / Windows CMD
+```shell
+curl -L zoanig.vercel.app
+```
+Windows PS (Powershell)
+```shell
+curl.exe -L zoanig.vercel.app
+```
+
