@@ -16,6 +16,7 @@
       .*' /  .*' ; .*`- +'  `*'       Tools & Others : Linux, Docker, Bash Scripting
       `*-*   `*-*  `*-*'            
                                     
+      ASCII by Blazej Kozlowski     
 
 </code>
 </pre>
