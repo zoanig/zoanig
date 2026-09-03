@@ -50,4 +50,4 @@ def generate_fetch_layout(config, logo_str, gap=4, color=True, newline=True):
         text_part = text_lines[i] if i < len(text_lines) else ""
         output_lines.append(f"{logo_padded}{' ' * gap}{text_part}")
         
-    return "\n".join(output_lines) + "\n" if newline else ""
+    return "\n".join(output_lines) + ("\n" if newline else "")
