@@ -16,7 +16,7 @@ except FileNotFoundError:
     sys.exit(1)
 
 
-def generate_fetch_layout(config, logo_str, gap=4, color=True):
+def generate_fetch_layout(config, logo_str, gap=4, color=True, newline=True):
     c_headline = "\033[1;32m" if color else ""
     c_title = "\033[1;34m" if color else ""
     c_key = "\033[1;36m" if color else ""
@@ -50,4 +50,4 @@ def generate_fetch_layout(config, logo_str, gap=4, color=True):
         text_part = text_lines[i] if i < len(text_lines) else ""
         output_lines.append(f"{logo_padded}{' ' * gap}{text_part}")
         
-    return "\n".join(output_lines) + "\n"
+    return "\n".join(output_lines) + "\n" if newline else ""

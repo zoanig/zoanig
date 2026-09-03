@@ -1,7 +1,7 @@
 from profile_generater import generate_fetch_layout, DATA, ASCII_ART
 
 with open('README.md', 'w') as file:
-    profile = generate_fetch_layout(DATA, ASCII_ART, color=False)
+    profile = generate_fetch_layout(DATA, ASCII_ART, color=False, newline=False)
     readme=f"""<pre>
 <code>
 {profile}
