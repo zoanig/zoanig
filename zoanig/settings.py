@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-02vq7b)blq#c-75p&*f&j#(b1436fjg_3hi2zf33ox+%v4epi3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -35,7 +35,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-
+    "django.middleware.common.CommonMiddleware"
 ]
 
 ROOT_URLCONF = "zoanig.urls"
@@ -106,3 +106,5 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
 }
+
+APPEND_SLASH=True
