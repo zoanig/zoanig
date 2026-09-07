@@ -16,6 +16,13 @@ Windows PS (Powershell)
 ```shell
 curl.exe -L zoanig.vercel.app
 ```
+Also try if you wish to apply the following color pallete to your terminal:
+![colors](./colors.png)
+
+```
+curl -L zoanig.vercel.app/theme
+```
+NOTE: The above endpoint sends a sequence of asni escape codes so resetting or restarting the terminal will bring the colors back to defaults or the previous theme.  
 
 """
     file.write(readme)
