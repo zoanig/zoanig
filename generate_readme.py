@@ -9,11 +9,11 @@ with open('README.md', 'w') as file:
 </pre>
 Try In Your Terminal:
 Linux / Mac / Windows CMD
-```shell
+```
 curl -L zoanig.vercel.app
 ```
 Windows PS (Powershell)
-```shell
+```
 curl.exe -L zoanig.vercel.app
 ```
 Also try if you wish to apply the following color pallete to your terminal:
