@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('./JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --surface: #2e3440;
+    --background: #3b4252;
+    --surface-hover: #434c5e;
+    --border: #4c566a;
+
+    --text: #eceff4;
+    --text-secondary: #d8dee9;
+    --text-muted: #81a1c1;
+
+    --accent: #88c0d0;
+    --accent-secondary: #81a1c1;
+
+    --success: #a3be8c;
+    --warning: #ebcb8b;
+    --danger: #bf616a;
+}
+
+*{
+    transition: all 3ms;
+}
+
+html {
+    font-family: 'JetBrains Mono', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    max-width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    min-height: 100dvh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav {
+    border-bottom: 1px solid var(--accent);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    a{
+        font-size: smaller;
+        text-decoration: none;
+        color: var(--text-secondary);
+        
+    }
+}
+
+
+.termwin{
+    max-width: 100%;
+    height: fit-content;
+    background-color: var(--surface);
+    padding: 2ch;
+    font-weight: bold;
+    font-size: x-small;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ascii {
+    color: var(--accent);
+    span {
+        color: var(--text);
+    }
+    p {
+        color: var(--accent-secondary);
+    }
+}
+
+.term-content{
+    flex: 2;
+    p{
+        margin: 0;
+    }
+    :first-child {
+        margin-bottom: 20px;
+    }
+}
+.term-headline {
+    color: var(--success);
+    padding-bottom: 5px;
+    border-bottom: 2px dashed var(--text);
+    text-align: center;
+}
+
+.term-section {
+    color: var(--accent-secondary);
+}
+
+.term-field-name {
+    display: block;
+    color: var(--accent);
+} 
+.term-field-value {
+    color: var(--text);
+    a {
+        text-decoration: none;
+        color: var(--text);
+    }
+}
+
+a:hover{
+    color: var(--accent-secondary);
+}
+
+
+.terminal-cursor {
+    display: inline-block;
+    width: 0.65em;
+    height: 1.1em;
+
+    margin-left: 0;
+    margin-right: -0.65em;
+
+    background-color: var(--text);
+
+    vertical-align: -0.15em;
+
+    animation: terminal-blink 1s steps(1, end) infinite;
+}
+
+@keyframes terminal-blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .output {
+        flex-direction: row;
+        text-align: start;
+        justify-content: start;
+    }
+    .termwin {
+        padding: 6ch;
+        font-size: small;
+    }
+    .term-field-name {
+        padding-left: 2ch;
+    }
+    .term-headline {
+        color: var(--success);
+        max-width: fit-content;
+        padding-bottom: 5px;
+        border-bottom: 2px dashed var(--text);
+    }
+    nav a {
+        font-size: large;
+    }
+}
