@@ -1,8 +1,9 @@
 @font-face {
     font-family: 'JetBrains Mono';
     src: url('./JetBrainsMono-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 100 900;
     font-style: normal;
+    font-display: block;
 }
 
 :root {
@@ -63,6 +64,15 @@ nav {
     padding: 2ch;
     font-weight: bold;
     font-size: x-small;
+}
+.output {
+    visibility: hidden;
+}
+
+.output .ascii pre,
+.output .ascii p,
+.output .term-content > p {
+    visibility: hidden;
 }
 
 .output {
