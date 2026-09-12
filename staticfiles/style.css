@@ -60,9 +60,10 @@ nav a{
 
 .toilet {
     color: var(--accent-secondary);
+    font-family: 'JetBrains Mono',monospace;
+    white-space: pre;
+    display: inline-block;
 }
-
-
 
 
 .termwin{
