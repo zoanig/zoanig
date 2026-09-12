@@ -24,10 +24,6 @@
     --danger: #bf616a;
 }
 
-*{
-    transition: all 3ms;
-}
-
 html {
     font-family: 'JetBrains Mono', sans-serif;
 }
@@ -48,13 +44,25 @@ nav {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
-    a{
-        font-size: smaller;
-        text-decoration: none;
-        color: var(--text-secondary);
-        
-    }
 }
+
+nav a{
+    font-size: smaller;
+    text-decoration: none;
+    color: var(--text-secondary);
+        
+}
+
+.content {
+    font-size: smaller;
+    text-align: center;
+}
+
+.toilet {
+    color: var(--accent-secondary);
+}
+
+
 
 
 .termwin{
@@ -79,6 +87,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 6ch
 }
 
 .ascii {
@@ -156,6 +165,11 @@ a:hover{
 }
 
 @media (min-width: 768px) {
+    .content {
+        font-size: medium;
+        max-width: 80%;
+        margin: auto;
+    }
     .output {
         flex-direction: row;
         text-align: start;
