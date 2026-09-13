@@ -189,12 +189,23 @@ a:hover{
     & .about-child {
         display: flex;
         justify-content: center;
+        padding-block: 1.5ch;
     }
     text-align: center;
 }
 
+.about p {
+    font-size: smaller;
+}
+
+.about-child div h2 {
+    margin-bottom: 3ch;
+}
+
 .about-child div div  {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2ch;
 }
 
@@ -208,7 +219,9 @@ a:hover{
 }
 
 .icon {
-    max-height: 25px;
+    height: 30px;
+    width: 100%;
+    color: var(--accent);
 }
 
 @media (min-width: 768px) {
@@ -237,5 +250,11 @@ a:hover{
     }
     nav a {
         font-size: large;
+    }
+    .about p{
+        font-size: medium;
+    }
+    .icon {
+        height: 50px;
     }
 }
