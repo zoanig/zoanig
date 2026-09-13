@@ -26,5 +26,8 @@
                 }
             }
         ]
+    },
+    "about": {
+        "text": "I'm a backend-focused developer from Pakistan who enjoys building reliable, maintainable software and understanding how it works under the hood. I primarily work with Python and Django, building web applications and APIs with a focus on clean architecture, sensible abstractions, and well-designed data models. Alongside Python, I work with JavaScript/TypeScript, Rust, and C++, continuously expanding my understanding of software beyond a single ecosystem."
     }
 }

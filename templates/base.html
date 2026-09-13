@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> zoanig | {{request.resolver_match.url_name}}</title>
+    <title> zoanig</title>
     <link rel="stylesheet" href={% static "style.css" %}>
     <link rel="icon" href={% static "favicon.svg" %} type="image/svg+xml">
 </head>
 <body>
-    <nav>
-        {% with "$ about projects contact" as edps %}
+    <nav id='header'>
+        {% with "home about projects contact" as edps %}
             {% for endp in edps.split %}
-                {% if endp == '$' %}
-                    <a href="#">home</a>
-                {% else %}
-                    <a href="#">{{ endp }}</a>
-                {% endif %}
+                    <a href="#{{ endp }}" id="hash-{{endp}}">{{ endp }}</a>
             {% endfor %}
         {% endwith %}
-
     </nav>
     {% block content %}{% endblock %}
+
+    {{ DATA.profile.sections|json_script:"d_sections" }}
+    <script>
+    window.DjangoStaticUrl = "{% static '' %}"; 
+    </script>
     <script src={% static "app.js" %}></script>
 </body>
 </html>
