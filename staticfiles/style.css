@@ -23,9 +23,10 @@
     --warning: #ebcb8b;
     --danger: #bf616a;
 }
-
 html {
     font-family: 'JetBrains Mono', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -39,18 +40,34 @@ body {
     margin: 0 auto;
 }
 
-nav {
+section {
+  padding-bottom: 10dvh;
+}
+
+.active {
+    color: var(--accent-secondary);
+}
+
+#header {
     border-bottom: 1px solid var(--accent);
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.15s;
+}
+
+#header.scrolled {
+    background-color: var(--surface-hover);
 }
 
 nav a{
     font-size: smaller;
     text-decoration: none;
     color: var(--text-secondary);
-        
+     
 }
 
 .content {
@@ -165,6 +182,63 @@ a:hover{
     }
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & .about-child {
+        display: flex;
+        justify-content: center;
+        padding-block: 1.5ch;
+    }
+    text-align: center;
+}
+
+.about p {
+    font-size: smaller;
+}
+
+.about-child div h2 {
+    margin-bottom: 3ch;
+}
+
+.about-child div div  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2ch;
+}
+
+.about-child div div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     & p {
+        margin: 0;
+     }
+}
+
+.icon {
+    height: 30px;
+    width: 100%;
+    color: var(--accent);
+}
+
+.projects {
+    text-align: center;
+    & a {
+        color: var(--text-muted);
+    }
+    & p {
+        font-size: smaller;
+    }
+
+}
+
+.projects div div {
+    border-bottom: 1px solid var(--accent);
+}
+
 @media (min-width: 768px) {
     .content {
         font-size: medium;
@@ -191,5 +265,11 @@ a:hover{
     }
     nav a {
         font-size: large;
+    }
+    .about p, .projects p{
+        font-size: medium;
+    }
+    .icon {
+        height: 50px;
     }
 }
