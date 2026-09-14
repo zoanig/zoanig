@@ -235,6 +235,17 @@ a:hover{
 
 }
 
+.contact {
+    text-align: center;
+    & p {
+        font-size: smaller;
+    }
+}
+
+.contact-link {
+        color: var(--text-secondary);
+}
+
 .projects div div {
     border-bottom: 1px solid var(--accent);
 }
@@ -266,7 +277,7 @@ a:hover{
     nav a {
         font-size: large;
     }
-    .about p, .projects p{
+    .about p, .projects p, .contact p{
         font-size: medium;
     }
     .icon {

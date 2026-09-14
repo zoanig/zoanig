@@ -5,13 +5,6 @@ import requests
 def profile(request):
     accept_header = request.META.get('HTTP_ACCEPT', '')
     condition = 'text/html' in accept_header
-    if condition:
-        try:
-            response = requests.get("https://pinned.berrysauce.dev/get/zoanig", headers = {"Accept": "application/json"})
-            pinnedRepos = response.json()
-        except:
-            pinnedRepos = False
-        DATA["pinnedRepos"] = pinnedRepos
     return HttpResponse(generate_fetch_layout(DATA, ASCII_ART), content_type="text/plain") if not condition else render(request, 'index.html', {'DATA': DATA, 'ASCII': ASCII_ART})
 
 def theme(request):

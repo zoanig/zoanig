@@ -1,33 +1,51 @@
 {
-    "ascii": {
-        "file": "./ascii.txt",
-        "artist": "Blazej Kozlowski"
+  "ascii": {
+    "file": "./ascii.txt",
+    "artist": "Blazej Kozlowski"
+  },
+  "profile": {
+    "headline": "zoanig@github.com",
+    "sections": [
+      {
+        "title": "Personal Info",
+        "fields": {
+          "Name": "Muhammad Hassan",
+          "Country": "Pakistan",
+          "Github": "https://github.com/zoanig",
+          "LinkedIn": "https://linkedin.com/in/zoanig"
+        }
+      },
+      {
+        "title": "Tech Stack",
+        "fields": {
+          "Languages": "Python, JS/TS, Rust, C++",
+          "Expertise": "Backend Web Development",
+          "Databases": "MySQL, PostgreSQL, MongoDB",
+          "Frameworks": "Django, FastAPI, ExpressJs, NestJs",
+          "Tools & Others": "Linux, Docker, Bash Scripting"
+        }
+      }
+    ]
+  },
+  "about": {
+    "text": "I'm a backend-focused software engineer from Pakistan who enjoys building reliable, maintainable software and understanding how it works under the hood. I primarily work with Python and Django, building web applications and APIs with a focus on clean architecture, sensible abstractions, and well-designed data models. Alongside Python, I work with JavaScript/TypeScript, Rust, and C++, continuously expanding my understanding of software beyond a single ecosystem."
+  },
+  "projects": [
+    {
+      "name": "PMS",
+      "description": "Django REST Framework backend for project management featuring organizations, projects, tasks, RBAC, JWT authentication, Swagger documentation, and scalable REST API architecture."
     },
-    "profile": {
-        "headline": "zoanig@github.com",
-        "sections": [
-            {
-                "title": "Personal Info",
-                "fields": {
-                    "Name": "Muhammad Hassan",
-                    "Country": "Pakistan",
-                    "Github": "https://github.com/zoanig",
-                    "LinkedIn": "https://linkedin.com/in/zoanig"
-                }
-            },
-            {
-                "title": "Tech Stack",
-                "fields": {
-                    "Languages": "Python, JS/TS, Rust, C++",
-                    "Expertise": "Backend Web Development",
-                    "Databases": "MySQL, PostgreSQL, MongoDB",
-                    "Frameworks": "Django, FastAPI, ExpressJs, NestJs",
-                    "Tools & Others": "Linux, Docker, Bash Scripting"
-                }
-            }
-        ]
+    {
+      "name": "django-movie-api",
+      "description": "RESTful Movie Rating API built with Django REST Framework featuring JWT authentication, reviews, watchlists, filtering, nested resources, and OpenAPI documentation."
     },
-    "about": {
-        "text": "I'm a backend-focused software engineer from Pakistan who enjoys building reliable, maintainable software and understanding how it works under the hood. I primarily work with Python and Django, building web applications and APIs with a focus on clean architecture, sensible abstractions, and well-designed data models. Alongside Python, I work with JavaScript/TypeScript, Rust, and C++, continuously expanding my understanding of software beyond a single ecosystem."
+    {
+      "name": "HMS",
+      "description": "Hospital Management System built with Django featuring appointment scheduling, patient management, doctor dashboards, and prescription management."
+    },
+    {
+      "name": "video-sharing-application-backend",
+      "description": "A Backend for a video sharing application. It implements authentication, media uploads, and social interactions while following a layered architecture and strict validation strategy."
     }
+  ]
 }
