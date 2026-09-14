@@ -224,6 +224,21 @@ a:hover{
     color: var(--accent);
 }
 
+.projects {
+    text-align: center;
+    & a {
+        color: var(--text-muted);
+    }
+    & p {
+        font-size: smaller;
+    }
+
+}
+
+.projects div div {
+    border-bottom: 1px solid var(--accent);
+}
+
 @media (min-width: 768px) {
     .content {
         font-size: medium;
@@ -251,7 +266,7 @@ a:hover{
     nav a {
         font-size: large;
     }
-    .about p{
+    .about p, .projects p{
         font-size: medium;
     }
     .icon {

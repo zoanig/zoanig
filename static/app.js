@@ -151,3 +151,30 @@ for (const [key, value] of Object.entries(techstack)) {
   }
 }
 
+const sections = document.querySelectorAll("section");
+
+// 2. Configure the observer options
+const options = {
+  root: null,         // Use the viewport as the root
+  rootMargin: '-20% 0px -60% 0px', // Shrink the active target zone to the top-middle of the screen
+  threshold: 0        // Trigger as soon as the element crosses the boundary
+};
+
+// 3. Create the callback function that runs on scroll intersection
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    // Only update if the section is actively entering our target viewport zone
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      
+      // Update the URL hash without triggering a page jump/flicker
+      history.replaceState(null, null, `#${id}`);
+    }
+  });
+};
+
+// 4. Initialize the IntersectionObserver
+const observer = new IntersectionObserver(observerCallback, options);
+
+// 5. Tell the observer to watch each section
+sections.forEach((section) => observer.observe(section));

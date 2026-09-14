@@ -1,0 +1,15 @@
+<div class="projects">
+    <h1>Projects</h1>
+    <div>
+        {% if DATA.pinnedRepos %}
+            {% for repo in DATA.pinnedRepos %}
+                <div>
+                    <h3>[<a href="https://github.com/zoanig/{{repo.name}}">{{repo.name}}</a>]</h3>
+                    <p>{{repo.description}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="error">Error fetching repos from github</p>
+        {% endif %}
+    </div>
+</div>
