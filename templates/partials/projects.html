@@ -1,0 +1,13 @@
+<div class="projects">
+  <h1>BUILDING TO LEARN </h1>
+  <div>
+    {% for repo in DATA.projects %}
+    <div>
+      <h3>
+        [<a href="https://github.com/zoanig/{{repo.name}}">{{repo.name}}</a>]
+      </h3>
+      <p>{{repo.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>

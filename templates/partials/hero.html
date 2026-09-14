@@ -1,0 +1,39 @@
+    <div class='content'>
+        <pre class="toilet">
+                    █     
+                        
+▐███▌ ▟█▙  ▟██▖▐▙██▖ ██   ▟█▟▌
+  ▗▛ ▐▛ ▜▌ ▘▄▟▌▐▛ ▐▌  █  ▐▛ ▜▌
+▗█▄▄▖▝█▄█▘▐▙▄█▌▐▌ ▐▌▗▄█▄▖▝█▄█▌
+▝▀▀▀▘ ▝▀▘  ▀▀▝▘▝▘ ▝▘▝▀▀▀▘ ▞▀▐▌
+                          ▜█▛▘
+        </pre>
+        <p> &gt; Hello everybody! My name is Muhammad Hassan AKA zoanig. I'm a software engineer from Pakistan.</span></p>
+
+    </div>
+    <div class="termwin">
+        <p class="prompt">$ curl -L {{ request.get_host }}{{ request.get_full_path|slice:":-1" }}</p>
+        <div class="output">
+            <div class="ascii">
+                <pre>{{ASCII}}</pre>
+                <p><span>ASCII by </span>{{DATA.ascii.artist}}</p>
+            </div>
+            <div class="term-content">
+                <p class='term-headline'>{{DATA.profile.headline}}</p>
+                {% for section in  DATA.profile.sections%}
+                    <p class='term-section'>[ {{section.title}} ]</p>
+                    {% for name, value in section.fields.items %}
+                        <p class='term-field-name'>{{name}}: 
+                        <span class='term-field-value'>
+                            {% if value|slice:":5" == "https" %}
+                            <a href="{{value}}" target="_blank">{{value}}</a>
+                            {% else %}
+                            {{value}}
+                            {% endif %}
+                        </span></p>
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
