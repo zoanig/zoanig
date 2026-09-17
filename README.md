@@ -9,11 +9,11 @@
        `-.-'          `-.             LinkedIn : https://linkedin.com/in/zoanig
          ;       `       `.         
          :.       .        \        [ Tech Stack ]
-         . \  .   :   .-'   .         Languages : Python, JS/TS, Rust, C++
-         '  `+.;  ;  '      :         Expertise : Backend Web Development
-         :  '  |    ;       ;-.       Databases : MySQL, PostgreSQL, MongoDB
-         ; '   : :`-:     _.`* ;      Frameworks : Django, FastAPI, ExpressJs, NestJs
-      .*' /  .*' ; .*`- +'  `*'       Tools & Others : Linux, Docker, Bash Scripting
+         . \  .   :   .-'   .         Expertise : Backend Web Development
+         '  `+.;  ;  '      :         Languages : Python, JS/TS, Rust, C++
+         :  '  |    ;       ;-.       Frameworks : Django, FastAPI, ExpressJs, NestJs
+         ; '   : :`-:     _.`* ;      Databases : MySQL, PostgreSQL, MongoDB
+      .*' /  .*' ; .*`- +'  `*'       DevTools : Git, Linux, Docker, Bash
       `*-*   `*-*  `*-*'            
                                     
       ASCII by Blazej Kozlowski     

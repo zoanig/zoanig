@@ -18,11 +18,11 @@
       {
         "title": "Tech Stack",
         "fields": {
-          "Languages": "Python, JS/TS, Rust, C++",
           "Expertise": "Backend Web Development",
-          "Databases": "MySQL, PostgreSQL, MongoDB",
+          "Languages": "Python, JS/TS, Rust, C++",
           "Frameworks": "Django, FastAPI, ExpressJs, NestJs",
-          "Tools & Others": "Linux, Docker, Bash Scripting"
+          "Databases": "MySQL, PostgreSQL, MongoDB",
+          "DevTools": "Git, Linux, Docker, Bash"
         }
       }
     ]
