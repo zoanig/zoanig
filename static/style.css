@@ -29,6 +29,10 @@ html {
     scroll-padding-top: 80px;
 }
 
+::selection {
+    background-color: var(--text-muted);
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
